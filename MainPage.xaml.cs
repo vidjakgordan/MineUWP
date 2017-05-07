@@ -22,9 +22,7 @@ namespace MineUWP
         public MainPage()
         {
             this.InitializeComponent();
-            VM vm = new VM();
-            this.DataContext = vm;
-            vm.NovaIgra();
+            this.DataContext = new VM();
         }
 
         //upravljanje split-view

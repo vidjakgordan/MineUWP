@@ -17,20 +17,27 @@
 
             <SplitView x:Name="splitView" DisplayMode="Inline" OpenPaneLength="200" IsPaneOpen="True">
                 <SplitView.Pane>
-                    <StackPanel>
-                        <TextBlock></TextBlock>
-                        <TextBlock>BROJ MINA:</TextBlock>
-                        <TextBox Text="{Binding BrojMina, Mode=TwoWay}"></TextBox>
-                        <TextBlock></TextBlock>
-                        <TextBlock>VELICINA IGRE:</TextBlock>
-                        <TextBox Text="{Binding BrojRedaka, Mode=TwoWay}"></TextBox>
-                        <TextBox Text="{Binding BrojStupaca, Mode=TwoWay}"></TextBox>
-                        <Button Command="{Binding Klik}">Igraj!</Button>
-                        <TextBlock></TextBlock>
-                        <StackPanel HorizontalAlignment="Stretch" Background="PowderBlue" Margin="1">
+                    <StackPanel Margin="2">
+                        <StackPanel Margin="10" Background="Beige">
+                            <TextBlock></TextBlock>
+                            <TextBlock>BROJ MINA:</TextBlock>
+                            <TextBox Text="{Binding BrojMina, Mode=TwoWay}"></TextBox>
+                            <TextBlock></TextBlock>
+                            <TextBlock>VELICINA IGRE:</TextBlock>
+                            <TextBox Text="{Binding BrojRedaka, Mode=TwoWay}"></TextBox>
+                            <TextBox Text="{Binding BrojStupaca, Mode=TwoWay}"></TextBox>
+                            <TextBlock></TextBlock>
+                            <Button HorizontalAlignment="Stretch" Command="{Binding Klik}">Igraj!</Button>
+                            <TextBlock></TextBlock>
+                        </StackPanel>
+                        <StackPanel HorizontalAlignment="Stretch" Background="PowderBlue" Margin="10">
                             <Button HorizontalAlignment="Stretch"  Command="{Binding Level}" CommandParameter="1">LAGANO</Button>
                             <Button HorizontalAlignment="Stretch"  Command="{Binding Level}" CommandParameter="2">SREDNJE</Button>
                             <Button HorizontalAlignment="Stretch" Command="{Binding Level}" CommandParameter="3">TESKO</Button>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" Background="Beige">
+                            <TextBlock>Još sekunda: </TextBlock>
+                            <TextBlock Text="{Binding Basetime, Mode=TwoWay}"></TextBlock>
                         </StackPanel>
                     </StackPanel>
                 </SplitView.Pane>

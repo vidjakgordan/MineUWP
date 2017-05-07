@@ -23,14 +23,48 @@ namespace MineUWP
         private ICommand _klik;
         private ICommand _level;
 
+        //dodatak vrijeme
+        private DispatcherTimer timer;
+        int basetime=60;
+        int basetime1 = 60;
+
+        public void Init() { // za inicijalizaciju svega potrebnog za timer, interval + tick
+            timer = new DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Tick += timer_Tick;
+        }
+
+        async void timer_Tick(object sender, object e) // kad vrijeme dode na 0, zaustavit timer, izbacit poruku da je isteklo vrijeme, basetime stavit na staru vrijednost, zapocet odma novu igru
+        {
+            Basetime = Basetime - 1;
+            if (Basetime == 0)
+            {
+                timer.Stop();
+                MessageDialog messbox = new MessageDialog("VRIJEME ISTEKLO!");
+                var res = await messbox.ShowAsync();
+                Basetime = basetime1;
+                NovaIgra();
+            }
+        }
+
+        private void StartTimer() //pokreni timer
+        {
+            timer.Start();
+        }
+
+        public int Basetime { get { return basetime; } set { basetime = value; RaisePropertyChanged("Basetime"); } }
+
         public VM()
         {
             _canExecute = true;
+            Init();
+            NovaIgra();
         }
 
         public int BrojMina { get { return brojMina; } set { brojMina = value; RaisePropertyChanged("BrojMina"); } }
         public int BrojRedaka { get { return brojRedaka; } set { brojRedaka = value; RaisePropertyChanged("BrojRedaka"); } }
         public int BrojStupaca { get { return brojStupaca; } set { brojStupaca = value; RaisePropertyChanged("BrojStupaca"); } }
+
 
         public List<Cell> Cells { get { return cells; } set { cells = value; RaisePropertyChanged("Cells"); } }
 
@@ -39,8 +73,14 @@ namespace MineUWP
         {
             get
             {
-                return _klik ?? (_klik = new CommandHandler(() => NovaIgra(), _canExecute));
+                return _klik ?? (_klik = new CommandHandler(() => NovaIgraNovoVrijeme(), _canExecute));
             }
+        }
+
+        public void NovaIgraNovoVrijeme()
+        {
+            Basetime = basetime1;
+            NovaIgra();
         }
 
         public ICommand Level
@@ -59,18 +99,21 @@ namespace MineUWP
                 BrojMina = 10;
                 BrojRedaka = 8;
                 BrojStupaca = 8;
+                Basetime = basetime1 = 60;
             }
             else if (l == "2")
             {
                 BrojMina = 40;
                 BrojRedaka = 16;
                 BrojStupaca = 16;
+                Basetime = basetime1 = 180;
             }
             else if (l == "3")
             {
                 BrojMina = 99;
                 BrojRedaka = 16;
                 BrojStupaca = 30;
+                Basetime = basetime1 = 600;
             }
             NovaIgra();
         }
@@ -166,6 +209,8 @@ namespace MineUWP
                 }
                 Cells = listaCelija;
             }
+
+            StartTimer();
         }
 
         private void OtvoriSveMine()

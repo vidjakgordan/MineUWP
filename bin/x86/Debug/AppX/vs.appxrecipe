@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-07T16:12:07.253</Modified>
+      <Modified>2017-05-07T17:41:29.438</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\bin\x86\Debug\MineUWP.exe">
       <PackagePath>entrypoint\MineUWP.exe</PackagePath>
-      <Modified>2017-05-07T16:12:07.028</Modified>
+      <Modified>2017-05-07T17:41:28.691</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Gordan\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -496,7 +496,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\bin\x86\Debug\MineUWP.xr.xml">
       <PackagePath>MineUWP.xr.xml</PackagePath>
-      <Modified>2017-05-07T16:07:10.883</Modified>
+      <Modified>2017-05-07T17:41:28.539</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -505,11 +505,11 @@
     <AppxPackagedFile Include="C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-07T16:07:11.529</Modified>
+      <Modified>2017-05-07T17:41:29.245</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\bin\x86\Debug\Core\MineUWP.exe">
       <PackagePath>MineUWP.exe</PackagePath>
-      <Modified>2017-05-07T16:12:07.247</Modified>
+      <Modified>2017-05-07T17:41:29.431</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

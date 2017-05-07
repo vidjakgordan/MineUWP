@@ -14,8 +14,9 @@ namespace MineUWP
 {
     class VM : INotifyPropertyChanged
     {
-        int brojMina=9;
-        int brojTezina=9;
+        int brojMina=10;
+        int brojRedaka=8;
+        int brojStupaca = 8;
         int brojOtvorenih = 0;
         List<Cell> cells;
         private bool _canExecute;
@@ -28,7 +29,9 @@ namespace MineUWP
         }
 
         public int BrojMina { get { return brojMina; } set { brojMina = value; RaisePropertyChanged("BrojMina"); } }
-        public int BrojTezina { get { return brojTezina; } set { brojTezina = value; RaisePropertyChanged("BrojTezina"); } }
+        public int BrojRedaka { get { return brojRedaka; } set { brojRedaka = value; RaisePropertyChanged("BrojRedaka"); } }
+        public int BrojStupaca { get { return brojStupaca; } set { brojStupaca = value; RaisePropertyChanged("BrojStupaca"); } }
+
         public List<Cell> Cells { get { return cells; } set { cells = value; RaisePropertyChanged("Cells"); } }
 
         #region icommands
@@ -54,17 +57,20 @@ namespace MineUWP
             if(l=="1")
             {
                 BrojMina = 10;
-                BrojTezina = 9;
+                BrojRedaka = 8;
+                BrojStupaca = 8;
             }
             else if (l == "2")
             {
                 BrojMina = 40;
-                BrojTezina = 16;
+                BrojRedaka = 16;
+                BrojStupaca = 16;
             }
             else if (l == "3")
             {
-                BrojMina = 150;
-                BrojTezina = 23;
+                BrojMina = 99;
+                BrojRedaka = 16;
+                BrojStupaca = 30;
             }
             NovaIgra();
         }
@@ -94,7 +100,7 @@ namespace MineUWP
                     JasneCelijeOkolo(c.I, c.J); //???
                 }
 
-                if (BrojTezina*BrojTezina - brojOtvorenih == BrojMina)
+                if (BrojRedaka*BrojStupaca - brojOtvorenih == BrojMina)
                 {
                     MessageDialog messbox = new MessageDialog("POBJEDIO SI :)");
                     var res = await messbox.ShowAsync();
@@ -127,8 +133,8 @@ namespace MineUWP
             bool postaviMine = true; // za nastavak fje random
             brojOtvorenih = 0;
             List<Cell> listaCelija = new List<Cell>();
-            for (int i = 0; i < BrojTezina; i++)
-                for (int j = 0; j < BrojTezina; j++)
+            for (int i = 0; i < BrojRedaka; i++)
+                for (int j = 0; j < BrojStupaca; j++)
                 {
                     Cell c = new Cell();
                     c.I = i;
@@ -140,9 +146,10 @@ namespace MineUWP
                 }
 
             //problem - više mina nego polja
-            if(BrojMina>=BrojTezina*BrojTezina)
+            if(BrojMina>=BrojRedaka*BrojStupaca)
             {
-                BrojTezina++;
+                BrojRedaka++;
+                BrojStupaca++;
                 postaviMine = false;
                 NovaIgra();
             }
@@ -174,7 +181,7 @@ namespace MineUWP
 
         private void JasneCelijeOkolo(int i, int j)
         {
-            if (i >= 0 && i < BrojTezina && j >= 0 && j < BrojTezina)
+            if (i >= 0 && i < BrojRedaka && j >= 0 && j < BrojStupaca)
             {
                 JasneCelijeOkolo_P(i - 1, j - 1);
                 JasneCelijeOkolo_P(i - 1, j);
@@ -189,7 +196,7 @@ namespace MineUWP
 
         private void JasneCelijeOkolo_P(int i, int j)
         {
-            if (i >= 0 && i < BrojTezina && j >= 0 && j < BrojTezina && (DohvatCelije(i, j).Text == string.Empty))
+            if (i >= 0 && i < BrojRedaka && j >= 0 && j < BrojStupaca && (DohvatCelije(i, j).Text == string.Empty))
             {
                 int n = BrojMinaOkoCelije(i, j);
 
@@ -222,7 +229,7 @@ namespace MineUWP
 
         private bool JeLiMina(int i, int j)
         {
-            if (i >= 0 && i < BrojTezina && j >= 0 && j < BrojTezina)
+            if (i >= 0 && i < BrojRedaka && j >= 0 && j < BrojStupaca)
                 return DohvatCelije(i, j).Mina;
             return false;
         }

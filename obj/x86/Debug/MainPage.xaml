@@ -23,7 +23,8 @@
                         <TextBox Text="{Binding BrojMina, Mode=TwoWay}"></TextBox>
                         <TextBlock></TextBlock>
                         <TextBlock>VELICINA IGRE:</TextBlock>
-                        <TextBox Text="{Binding BrojTezina, Mode=TwoWay}"></TextBox>
+                        <TextBox Text="{Binding BrojRedaka, Mode=TwoWay}"></TextBox>
+                        <TextBox Text="{Binding BrojStupaca, Mode=TwoWay}"></TextBox>
                         <Button Command="{Binding Klik}">Igraj!</Button>
                         <TextBlock></TextBlock>
                         <StackPanel HorizontalAlignment="Stretch" Background="PowderBlue" Margin="1">
@@ -55,7 +56,7 @@
 
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
-                                    <local:UniformGrid Rows="{Binding BrojTezina}" Columns="{Binding BrojTezina}"></local:UniformGrid>
+                                    <local:UniformGrid Rows="{Binding BrojRedaka}" Columns="{Binding BrojStupaca}"></local:UniformGrid>
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
 

@@ -3,7 +3,8 @@
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="Level" />
     <RootPropertyPathName Name="Klik" />
-    <RootPropertyPathName Name="BrojTezina" />
+    <RootPropertyPathName Name="BrojStupaca" />
+    <RootPropertyPathName Name="BrojRedaka" />
     <RootPropertyPathName Name="BrojMina" />
     <RootPropertyPathName Name="Cells" />
     <RootPropertyPathName Name="ShowFlag" />

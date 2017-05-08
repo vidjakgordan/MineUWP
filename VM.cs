@@ -9,12 +9,14 @@ using Windows.UI.Popups;
 using Windows.UI.Xaml;
 
 // https://dzone.com/articles/minesweeper-algorithms-explained
+// https://social.msdn.microsoft.com/Forums/windowsapps/en-US/03b701f9-f78a-4df1-98db-05b752fab920/count-down-timer-by-button-windows-phone-81-c?forum=wpdevelop
 
 namespace MineUWP
 {
     class VM : INotifyPropertyChanged
     {
-        int brojMina=10;
+        #region attributes
+        int brojMina =10;
         int brojRedaka=8;
         int brojStupaca = 8;
         int brojOtvorenih = 0;
@@ -22,13 +24,56 @@ namespace MineUWP
         private bool _canExecute;
         private ICommand _klik;
         private ICommand _level;
-
         //dodatak vrijeme
         private DispatcherTimer timer;
         int basetime=60;
         int basetime1 = 60;
+        #endregion
 
-        public void Init() { // za inicijalizaciju svega potrebnog za timer, interval + tick
+        public VM()
+        {
+            _canExecute = true;
+            InitializeTimer();
+            NovaIgra();
+        }
+
+        #region properties
+        public int BrojMina
+        {
+            get { return brojMina; }
+            set { brojMina = value;
+                RaisePropertyChanged("BrojMina"); }
+        }
+
+        public int BrojRedaka
+        {
+            get { return brojRedaka; }
+            set { brojRedaka = value; RaisePropertyChanged("BrojRedaka"); }
+        }
+
+        public int BrojStupaca
+        {
+            get { return brojStupaca; }
+            set { brojStupaca = value;
+                RaisePropertyChanged("BrojStupaca"); }
+        }
+
+        public int Basetime
+        {
+            get { return basetime; }
+            set { basetime = value; RaisePropertyChanged("Basetime"); }
+        }
+
+        public List<Cell> Cells
+        {
+            get { return cells; }
+            set { cells = value; RaisePropertyChanged("Cells"); }
+        }
+        #endregion
+
+        #region timer functions
+        public void InitializeTimer() // za inicijalizaciju svega potrebnog za timer, interval + tick
+        {
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 1);
             timer.Tick += timer_Tick;
@@ -42,45 +87,25 @@ namespace MineUWP
                 timer.Stop();
                 MessageDialog messbox = new MessageDialog("VRIJEME ISTEKLO!");
                 var res = await messbox.ShowAsync();
-                Basetime = basetime1;
+                //Basetime = basetime1;
                 NovaIgra();
             }
         }
 
         private void StartTimer() //pokreni timer
         {
+            Basetime = basetime1;
             timer.Start();
         }
-
-        public int Basetime { get { return basetime; } set { basetime = value; RaisePropertyChanged("Basetime"); } }
-
-        public VM()
-        {
-            _canExecute = true;
-            Init();
-            NovaIgra();
-        }
-
-        public int BrojMina { get { return brojMina; } set { brojMina = value; RaisePropertyChanged("BrojMina"); } }
-        public int BrojRedaka { get { return brojRedaka; } set { brojRedaka = value; RaisePropertyChanged("BrojRedaka"); } }
-        public int BrojStupaca { get { return brojStupaca; } set { brojStupaca = value; RaisePropertyChanged("BrojStupaca"); } }
-
-
-        public List<Cell> Cells { get { return cells; } set { cells = value; RaisePropertyChanged("Cells"); } }
+        #endregion
 
         #region icommands
         public ICommand Klik
         {
             get
             {
-                return _klik ?? (_klik = new CommandHandler(() => NovaIgraNovoVrijeme(), _canExecute));
+                return _klik ?? (_klik = new CommandHandler(() => NovaIgra(), _canExecute));
             }
-        }
-
-        public void NovaIgraNovoVrijeme()
-        {
-            Basetime = basetime1;
-            NovaIgra();
         }
 
         public ICommand Level
@@ -91,32 +116,6 @@ namespace MineUWP
             }
         }
         #endregion
-
-        private void NovaIgraLevel(string l)
-        {
-            if(l=="1")
-            {
-                BrojMina = 10;
-                BrojRedaka = 8;
-                BrojStupaca = 8;
-                Basetime = basetime1 = 60;
-            }
-            else if (l == "2")
-            {
-                BrojMina = 40;
-                BrojRedaka = 16;
-                BrojStupaca = 16;
-                Basetime = basetime1 = 180;
-            }
-            else if (l == "3")
-            {
-                BrojMina = 99;
-                BrojRedaka = 16;
-                BrojStupaca = 30;
-                Basetime = basetime1 = 600;
-            }
-            NovaIgra();
-        }
 
         #region obrada lijevi i desni klik
         public async void LijeviKlikObrada(Cell c)
@@ -147,6 +146,7 @@ namespace MineUWP
                 {
                     MessageDialog messbox = new MessageDialog("POBJEDIO SI :)");
                     var res = await messbox.ShowAsync();
+                    timer.Stop();
                     NovaIgra();
                 }
             }
@@ -171,6 +171,32 @@ namespace MineUWP
         #endregion
 
         #region logikaigre
+        private void NovaIgraLevel(string l)
+        {
+            if (l == "1")
+            {
+                BrojMina = 10;
+                BrojRedaka = 8;
+                BrojStupaca = 8;
+                Basetime = basetime1 = 60;
+            }
+            else if (l == "2")
+            {
+                BrojMina = 40;
+                BrojRedaka = 16;
+                BrojStupaca = 16;
+                Basetime = basetime1 = 180;
+            }
+            else if (l == "3")
+            {
+                BrojMina = 99;
+                BrojRedaka = 16;
+                BrojStupaca = 30;
+                Basetime = basetime1 = 600;
+            }
+            NovaIgra();
+        }
+
         public void NovaIgra()
         {
             bool postaviMine = true; // za nastavak fje random
@@ -218,9 +244,11 @@ namespace MineUWP
             for (int i = 0; i < Cells.Count; i++)
             {
                 if (Cells[i].Mina)
+                {
                     Cells[i].ShowBomb = Visibility.Visible;
-                if (Cells[i].ShowFlag == Visibility.Visible)
-                    Cells[i].ShowFlag = Visibility.Collapsed;
+                    if (Cells[i].ShowFlag == Visibility.Visible)
+                        Cells[i].ShowFlag = Visibility.Collapsed;
+                }
             }
         }
 
@@ -297,7 +325,7 @@ namespace MineUWP
         }
         #endregion
 
-        #region commandhandleri 
+        #region commandhandlers icommand
         public class CommandHandler : ICommand
         {
             private Action _action;

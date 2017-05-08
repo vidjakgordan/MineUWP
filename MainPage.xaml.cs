@@ -25,7 +25,7 @@ namespace MineUWP
             this.DataContext = new VM();
         }
 
-        //upravljanje split-view
+        #region split-view handlers
         private void HandleChecked(object sender, RoutedEventArgs e)
         {
             splitView.IsPaneOpen = false;
@@ -35,7 +35,9 @@ namespace MineUWP
         {
             splitView.IsPaneOpen = true;
         }
+        #endregion
 
+        #region button&image right click handlers
         //upravljanje botunom i slikom
         private void Button_RightTapped(object sender, RightTappedRoutedEventArgs e)
         {
@@ -50,5 +52,6 @@ namespace MineUWP
             Cell c = (Cell)((Image)sender).DataContext;
             vm.DesniKlikObrada(c);
         }
+        #endregion
     }
 }

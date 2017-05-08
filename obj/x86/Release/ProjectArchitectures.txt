@@ -1,0 +1,1 @@
+C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\MineUWP.csproj;x86

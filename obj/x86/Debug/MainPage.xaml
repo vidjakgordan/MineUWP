@@ -12,14 +12,14 @@
         <StackPanel Margin="20">
 
             <StackPanel Orientation="Horizontal">
-                <ToggleButton x:ConnectionId='8' x:Name="HambButton"                        
+                <ToggleButton x:ConnectionId='7' x:Name="HambButton"                        
                                                           HorizontalAlignment="Center"/>
             </StackPanel>
 
             <SplitView x:ConnectionId='2' x:Name="splitView" DisplayMode="Inline" OpenPaneLength="200" IsPaneOpen="True">
                 <SplitView.Pane>
                     <StackPanel Margin="1">
-                        <StackPanel x:ConnectionId='3' Margin="10" x:Name="ControlsPanel">
+                        <StackPanel Margin="10" Background="{Binding Color, Mode=TwoWay}">
                             <TextBlock></TextBlock>
                             <TextBlock>BROJ MINA:</TextBlock>
                             <TextBox Text="{Binding BrojMina, Mode=TwoWay}"></TextBox>
@@ -31,18 +31,18 @@
                             <Button HorizontalAlignment="Stretch" Command="{Binding Klik}">Igraj!</Button>
                             <TextBlock></TextBlock>
                         </StackPanel >
-                        <StackPanel HorizontalAlignment="Stretch" Margin="10">
+                        <StackPanel Background="{Binding Color, Mode=TwoWay}" HorizontalAlignment="Stretch" Margin="10">
                             <Button HorizontalAlignment="Stretch"  Command="{Binding Level}" CommandParameter="1">LAGANO</Button>
                             <Button HorizontalAlignment="Stretch"  Command="{Binding Level}" CommandParameter="2">SREDNJE</Button>
                             <Button HorizontalAlignment="Stretch" Command="{Binding Level}" CommandParameter="3">TESKO</Button>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="10">
+                        <StackPanel Background="{Binding Color, Mode=TwoWay}" Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="10">
                             <TextBlock>Još sekunda: </TextBlock>
                             <TextBlock Text="{Binding Basetime, Mode=TwoWay}"></TextBlock>
                         </StackPanel>
                         <StackPanel Margin="10">
-                            <Button x:ConnectionId='4' x:Name="button_CPopen"                             HorizontalAlignment="Stretch" Content="BOJA SUČELJA"></Button>
-                            <Controls:ColorPicker x:ConnectionId='5' x:Name="CPicker" Visibility="Collapsed" Height="200" Width="200"                                    ></Controls:ColorPicker>
+                            <Button x:ConnectionId='3' Background="{Binding Color, Mode=TwoWay}" x:Name="button_CPopen"                             HorizontalAlignment="Stretch" Content="BOJA SUČELJA"></Button>
+                            <Controls:ColorPicker x:ConnectionId='4' x:Name="CPicker" Visibility="Collapsed" Height="200" Width="200"                                    ></Controls:ColorPicker>
                         </StackPanel>
                     </StackPanel>
                 </SplitView.Pane>
@@ -57,10 +57,11 @@
                                 <DataTemplate>
                                     <Grid Margin="1" MinHeight="33">
                                         <Grid>
-                                            <Button x:ConnectionId='6' Opacity="1" Content="{Binding Text}" Command="{Binding LijeviKlik}" CommandParameter="{Binding}" Visibility="{Binding ShowButton}"                                 
+                                            <Button x:ConnectionId='5' Opacity="0.3"  Content="{Binding Text}" Command="{Binding LijeviKlik}" 
+                                                    CommandParameter="{Binding}" Visibility="{Binding ShowButton}"                                 
                                                     HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Button>
                                             <Image  MaxHeight="30" Source="Images/bomb.png" Visibility="{Binding ShowBomb}"></Image>
-                                            <Image x:ConnectionId='7' MaxHeight="30" Source="Images/flag.png" Visibility="{Binding ShowFlag}"                                ></Image>
+                                            <Image x:ConnectionId='6' MaxHeight="30" Source="Images/flag.png" Visibility="{Binding ShowFlag}"                                ></Image>
                                         </Grid>
                                     </Grid>
                                 </DataTemplate>
@@ -68,7 +69,7 @@
 
                             <ItemsControl.ItemsPanel >
                                 <ItemsPanelTemplate >
-                                    <local:UniformGrid Rows="{Binding BrojRedaka}" Columns="{Binding BrojStupaca}"></local:UniformGrid>
+                                    <local:UniformGrid Background="{Binding Color, Mode=TwoWay}" Rows="{Binding BrojRedaka}" Columns="{Binding BrojStupaca}"></local:UniformGrid>
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
                         </ItemsControl>

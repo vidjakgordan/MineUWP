@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\Gordan\documents\visual studio 2015\Projects\MineUWP\MineUWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-09T16:55:30.703</Modified>
+      <Modified>2017-05-09T23:10:19.062</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Gordan\documents\visual studio 2015\Projects\MineUWP\MineUWP\bin\x86\Debug\MineUWP.exe">
       <PackagePath>entrypoint\MineUWP.exe</PackagePath>
-      <Modified>2017-05-09T16:55:30.084</Modified>
+      <Modified>2017-05-09T23:10:18.421</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Gordan\.nuget\packages\Coding4Fun.Toolkit.Controls\2.1.8\lib\netcore451\Coding4Fun.Toolkit.Controls.dll">
       <PackagePath>Coding4Fun.Toolkit.Controls.dll</PackagePath>
@@ -504,7 +504,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Gordan\documents\visual studio 2015\Projects\MineUWP\MineUWP\bin\x86\Debug\MineUWP.xr.xml">
       <PackagePath>MineUWP.xr.xml</PackagePath>
-      <Modified>2017-05-09T16:54:50.360</Modified>
+      <Modified>2017-05-09T23:10:18.253</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -521,11 +521,11 @@
     <AppxPackagedFile Include="C:\Users\Gordan\documents\visual studio 2015\Projects\MineUWP\MineUWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-09T16:55:30.520</Modified>
+      <Modified>2017-05-09T23:10:18.876</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Gordan\documents\visual studio 2015\Projects\MineUWP\MineUWP\bin\x86\Debug\Core\MineUWP.exe">
       <PackagePath>MineUWP.exe</PackagePath>
-      <Modified>2017-05-09T16:55:30.697</Modified>
+      <Modified>2017-05-09T23:10:19.056</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

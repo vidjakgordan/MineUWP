@@ -19,7 +19,7 @@
             <SplitView x:Name="splitView" DisplayMode="Inline" OpenPaneLength="200" IsPaneOpen="True">
                 <SplitView.Pane>
                     <StackPanel Margin="1">
-                        <StackPanel Margin="10" x:Name="ControlsPanel">
+                        <StackPanel Margin="10" Background="{Binding Color, Mode=TwoWay}">
                             <TextBlock></TextBlock>
                             <TextBlock>BROJ MINA:</TextBlock>
                             <TextBox Text="{Binding BrojMina, Mode=TwoWay}"></TextBox>
@@ -31,17 +31,17 @@
                             <Button HorizontalAlignment="Stretch" Command="{Binding Klik}">Igraj!</Button>
                             <TextBlock></TextBlock>
                         </StackPanel >
-                        <StackPanel HorizontalAlignment="Stretch" Margin="10">
+                        <StackPanel Background="{Binding Color, Mode=TwoWay}" HorizontalAlignment="Stretch" Margin="10">
                             <Button HorizontalAlignment="Stretch"  Command="{Binding Level}" CommandParameter="1">LAGANO</Button>
                             <Button HorizontalAlignment="Stretch"  Command="{Binding Level}" CommandParameter="2">SREDNJE</Button>
                             <Button HorizontalAlignment="Stretch" Command="{Binding Level}" CommandParameter="3">TESKO</Button>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="10">
+                        <StackPanel Background="{Binding Color, Mode=TwoWay}" Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="10">
                             <TextBlock>Još sekunda: </TextBlock>
                             <TextBlock Text="{Binding Basetime, Mode=TwoWay}"></TextBlock>
                         </StackPanel>
                         <StackPanel Margin="10">
-                            <Button x:Name="button_CPopen" Click="button_CPopen_Click" HorizontalAlignment="Stretch" Content="BOJA SUČELJA"></Button>
+                            <Button Background="{Binding Color, Mode=TwoWay}" x:Name="button_CPopen" Click="button_CPopen_Click" HorizontalAlignment="Stretch" Content="BOJA SUČELJA"></Button>
                             <Controls:ColorPicker x:Name="CPicker" Visibility="Collapsed" Height="200" Width="200" ColorChanged="CPicker_ColorChanged"></Controls:ColorPicker>
                         </StackPanel>
                     </StackPanel>
@@ -57,7 +57,8 @@
                                 <DataTemplate>
                                     <Grid Margin="1" MinHeight="33">
                                         <Grid>
-                                            <Button Opacity="1" Content="{Binding Text}" Command="{Binding LijeviKlik}" CommandParameter="{Binding}" Visibility="{Binding ShowButton}" RightTapped="Button_RightTapped"
+                                            <Button Opacity="0.3"  Content="{Binding Text}" Command="{Binding LijeviKlik}" 
+                                                    CommandParameter="{Binding}" Visibility="{Binding ShowButton}" RightTapped="Button_RightTapped"
                                                     HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Button>
                                             <Image  MaxHeight="30" Source="Images/bomb.png" Visibility="{Binding ShowBomb}"></Image>
                                             <Image MaxHeight="30" Source="Images/flag.png" Visibility="{Binding ShowFlag}" RightTapped="Image_RightTapped"></Image>
@@ -68,7 +69,7 @@
 
                             <ItemsControl.ItemsPanel >
                                 <ItemsPanelTemplate >
-                                    <local:UniformGrid Rows="{Binding BrojRedaka}" Columns="{Binding BrojStupaca}"></local:UniformGrid>
+                                    <local:UniformGrid Background="{Binding Color, Mode=TwoWay}" Rows="{Binding BrojRedaka}" Columns="{Binding BrojStupaca}"></local:UniformGrid>
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
                         </ItemsControl>

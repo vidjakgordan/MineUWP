@@ -19,11 +19,12 @@ namespace MineUWP
 {
     public sealed partial class MainPage : Page
     {
+        VM vm = new VM();
 
         public MainPage()
         {
             this.InitializeComponent();
-            this.DataContext = new VM();
+            this.DataContext = vm;
         }
 
         #region split-view handlers
@@ -67,8 +68,8 @@ namespace MineUWP
         {
             SolidColorBrush color_new = new SolidColorBrush(color);
             color_new.Opacity = .5;
-            MainBack.Background = splitView.Background = color_new;
-            
+
+            vm.Color = color_new;
             //izmjena boja       
         }
 

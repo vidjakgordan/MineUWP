@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Roots >
   <Roots.PropertyPathNames>
+    <RootPropertyPathName Name="Color" />
     <RootPropertyPathName Name="Basetime" />
     <RootPropertyPathName Name="Level" />
     <RootPropertyPathName Name="Klik" />
@@ -30,6 +31,7 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Children" />
       <RootProperty Name="Orientation" />
+      <RootProperty Name="Background" />
       <RootProperty Name="HorizontalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.SplitView">
@@ -40,6 +42,7 @@
       <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="Background" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Content" />
       <RootProperty Name="Command" />
@@ -56,12 +59,12 @@
       <RootProperty Name="Width" />
       <RootEvent Name="ColorChanged" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Data.Binding">
+      <RootProperty Name="Mode" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
       <RootProperty Name="Inlines" />
       <RootProperty Name="Text" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Data.Binding">
-      <RootProperty Name="Mode" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Text" />
@@ -84,6 +87,7 @@
       <RootProperty Name="Template" />
     </RootType>
     <RootType FullName="MineUWP.UniformGrid">
+      <RootProperty Name="Background" />
       <RootProperty Name="Rows" />
       <RootProperty Name="Columns" />
     </RootType>

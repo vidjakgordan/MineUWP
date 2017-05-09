@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Media;
 
 // https://dzone.com/articles/minesweeper-algorithms-explained
 // https://social.msdn.microsoft.com/Forums/windowsapps/en-US/03b701f9-f78a-4df1-98db-05b752fab920/count-down-timer-by-button-windows-phone-81-c?forum=wpdevelop
@@ -28,6 +29,7 @@ namespace MineUWP
         private DispatcherTimer timer;
         int basetime=60;
         int basetime1 = 60;
+        SolidColorBrush color = new SolidColorBrush(Windows.UI.Color.FromArgb(0xff, 0xff, 0x00, 0x00));
         #endregion
 
         public VM()
@@ -38,6 +40,16 @@ namespace MineUWP
         }
 
         #region properties
+        public SolidColorBrush Color
+        {
+            get { return color; }
+            set
+            {
+                color = value;
+                RaisePropertyChanged("Color");
+            }
+        }
+
         public int BrojMina
         {
             get { return brojMina; }

@@ -53,5 +53,22 @@ namespace MineUWP
             vm.DesniKlikObrada(c);
         }
         #endregion
+
+        private void button_CPopen_Click(object sender, RoutedEventArgs e)
+        {
+            if (CPicker.Visibility == Visibility.Collapsed)
+                CPicker.Visibility = Visibility.Visible;
+            else if (CPicker.Visibility == Visibility.Visible)
+                CPicker.Visibility = Visibility.Collapsed;
+        }
+
+        private void CPicker_ColorChanged(object sender, Windows.UI.Color color)
+        {
+            SolidColorBrush color_new = new SolidColorBrush(color);
+            ControlsPanel.Background = color_new;
+            //izmjena boja            
+
+
+        }
     }
 }

@@ -3,6 +3,17 @@
   "version": 2,
   "targets": {
     "UAP,Version=v10.0": {
+      "Coding4Fun.Toolkit.Controls/2.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/netcore451/Coding4Fun.Toolkit.Controls.dll": {},
+          "lib/netcore451/Coding4Fun.Toolkit.dll": {}
+        },
+        "runtime": {
+          "lib/netcore451/Coding4Fun.Toolkit.Controls.dll": {},
+          "lib/netcore451/Coding4Fun.Toolkit.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -1880,6 +1891,17 @@
       }
     },
     "UAP,Version=v10.0/win10-arm": {
+      "Coding4Fun.Toolkit.Controls/2.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/netcore451/Coding4Fun.Toolkit.Controls.dll": {},
+          "lib/netcore451/Coding4Fun.Toolkit.dll": {}
+        },
+        "runtime": {
+          "lib/netcore451/Coding4Fun.Toolkit.Controls.dll": {},
+          "lib/netcore451/Coding4Fun.Toolkit.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -3623,6 +3645,17 @@
       }
     },
     "UAP,Version=v10.0/win10-arm-aot": {
+      "Coding4Fun.Toolkit.Controls/2.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/netcore451/Coding4Fun.Toolkit.Controls.dll": {},
+          "lib/netcore451/Coding4Fun.Toolkit.dll": {}
+        },
+        "runtime": {
+          "lib/netcore451/Coding4Fun.Toolkit.Controls.dll": {},
+          "lib/netcore451/Coding4Fun.Toolkit.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -5323,6 +5356,17 @@
       }
     },
     "UAP,Version=v10.0/win10-x64": {
+      "Coding4Fun.Toolkit.Controls/2.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/netcore451/Coding4Fun.Toolkit.Controls.dll": {},
+          "lib/netcore451/Coding4Fun.Toolkit.dll": {}
+        },
+        "runtime": {
+          "lib/netcore451/Coding4Fun.Toolkit.Controls.dll": {},
+          "lib/netcore451/Coding4Fun.Toolkit.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -7075,6 +7119,17 @@
       }
     },
     "UAP,Version=v10.0/win10-x64-aot": {
+      "Coding4Fun.Toolkit.Controls/2.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/netcore451/Coding4Fun.Toolkit.Controls.dll": {},
+          "lib/netcore451/Coding4Fun.Toolkit.dll": {}
+        },
+        "runtime": {
+          "lib/netcore451/Coding4Fun.Toolkit.Controls.dll": {},
+          "lib/netcore451/Coding4Fun.Toolkit.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -8775,6 +8830,17 @@
       }
     },
     "UAP,Version=v10.0/win10-x86": {
+      "Coding4Fun.Toolkit.Controls/2.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/netcore451/Coding4Fun.Toolkit.Controls.dll": {},
+          "lib/netcore451/Coding4Fun.Toolkit.dll": {}
+        },
+        "runtime": {
+          "lib/netcore451/Coding4Fun.Toolkit.Controls.dll": {},
+          "lib/netcore451/Coding4Fun.Toolkit.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -10527,6 +10593,17 @@
       }
     },
     "UAP,Version=v10.0/win10-x86-aot": {
+      "Coding4Fun.Toolkit.Controls/2.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/netcore451/Coding4Fun.Toolkit.Controls.dll": {},
+          "lib/netcore451/Coding4Fun.Toolkit.dll": {}
+        },
+        "runtime": {
+          "lib/netcore451/Coding4Fun.Toolkit.Controls.dll": {},
+          "lib/netcore451/Coding4Fun.Toolkit.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -12228,6 +12305,45 @@
     }
   },
   "libraries": {
+    "Coding4Fun.Toolkit.Controls/2.1.8": {
+      "sha512": "PCRWgCiW9H8qzT8xYxNtpq4ZWpvh2gtrKAnWtEOXzapyXTEt8esCt0cqRwvosW+bytyfohonmB7UxB0EGXmdsQ==",
+      "type": "package",
+      "path": "Coding4Fun.Toolkit.Controls/2.1.8",
+      "files": [
+        "Coding4Fun.Toolkit.Controls.2.1.8.nupkg.sha512",
+        "Coding4Fun.Toolkit.Controls.nuspec",
+        "content/ReadMe.Coding4Fun.Toolkit.txt",
+        "content/windowsphone8/Toolkit.Content/ApplicationBar.Cancel.png",
+        "content/windowsphone8/Toolkit.Content/ApplicationBar.Check.png",
+        "lib/netcore451/Coding4Fun.Toolkit.Controls.dll",
+        "lib/netcore451/Coding4Fun.Toolkit.Controls.pri",
+        "lib/netcore451/Coding4Fun.Toolkit.Controls/Coding4Fun.Toolkit.Controls.xr.xml",
+        "lib/netcore451/Coding4Fun.Toolkit.Controls/Themes/Generic.xbf",
+        "lib/netcore451/Coding4Fun.Toolkit.dll",
+        "lib/netcore451/Coding4Fun.Toolkit.pri",
+        "lib/windowsphone8/Coding4Fun.Toolkit.Controls.dll",
+        "lib/windowsphone8/Coding4Fun.Toolkit.dll",
+        "lib/windowsphone8/cs/Coding4Fun.Toolkit.Controls.resources.dll",
+        "lib/windowsphone8/da/Coding4Fun.Toolkit.Controls.resources.dll",
+        "lib/windowsphone8/de/Coding4Fun.Toolkit.Controls.resources.dll",
+        "lib/windowsphone8/es/Coding4Fun.Toolkit.Controls.resources.dll",
+        "lib/windowsphone8/fr/Coding4Fun.Toolkit.Controls.resources.dll",
+        "lib/windowsphone8/fr/hu/Coding4Fun.Toolkit.Controls.resources.dll",
+        "lib/windowsphone8/it/Coding4Fun.Toolkit.Controls.resources.dll",
+        "lib/windowsphone8/ko/Coding4Fun.Toolkit.Controls.resources.dll",
+        "lib/windowsphone8/no/Coding4Fun.Toolkit.Controls.resources.dll",
+        "lib/windowsphone8/pl/Coding4Fun.Toolkit.Controls.resources.dll",
+        "lib/windowsphone8/pt/Coding4Fun.Toolkit.Controls.resources.dll",
+        "lib/windowsphone8/ru/Coding4Fun.Toolkit.Controls.resources.dll",
+        "lib/windowsphone8/sk/Coding4Fun.Toolkit.Controls.resources.dll",
+        "lib/wpa81/Coding4Fun.Toolkit.Controls.dll",
+        "lib/wpa81/Coding4Fun.Toolkit.Controls.pri",
+        "lib/wpa81/Coding4Fun.Toolkit.Controls/Coding4Fun.Toolkit.Controls.xr.xml",
+        "lib/wpa81/Coding4Fun.Toolkit.Controls/Themes/Generic.xbf",
+        "lib/wpa81/Coding4Fun.Toolkit.dll",
+        "lib/wpa81/Coding4Fun.Toolkit.pri"
+      ]
+    },
     "Microsoft.CSharp/4.0.0": {
       "sha512": "oWqeKUxHXdK6dL2CFjgMcaBISbkk+AqEg+yvJHE4DElNzS4QaTsCflgkkqZwVlWby1Dg9zo9n+iCAMFefFdJ/A==",
       "type": "package",
@@ -15606,6 +15722,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "Coding4Fun.Toolkit.Controls >= 2.1.8",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.1.0"
     ],
     "UAP,Version=v10.0": []

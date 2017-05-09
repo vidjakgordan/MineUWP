@@ -190,3 +190,7 @@ C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\obj\x86\De
 C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\obj\x86\Debug\qualifiers.txt.intermediate
 C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\bin\x86\Debug\Coding4Fun.Toolkit.Controls.dll
+C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\bin\x86\Debug\Coding4Fun.Toolkit.dll
+C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\obj\x86\Debug\Coding4Fun.Toolkit.Controls.pri.xml
+C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\obj\x86\Debug\Coding4Fun.Toolkit.pri.xml

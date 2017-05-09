@@ -67,6 +67,18 @@ namespace MineUWP.MineUWP_XamlTypeInfo
             {
                 xamlType = CreateXamlType(typeIndex);
             }
+            var userXamlType = xamlType as global::MineUWP.MineUWP_XamlTypeInfo.XamlUserType;
+            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
+            {
+                global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForType(type);
+                if (libXamlType != null)
+                {
+                    if(libXamlType.IsConstructible || xamlType == null)
+                    {
+                        xamlType = libXamlType;
+                    }
+                }
+            }
             if (xamlType != null)
             {
                 _xamlTypeCacheByName.Add(xamlType.FullName, xamlType);
@@ -90,6 +102,18 @@ namespace MineUWP.MineUWP_XamlTypeInfo
             if(typeIndex != -1)
             {
                 xamlType = CreateXamlType(typeIndex);
+            }
+            var userXamlType = xamlType as global::MineUWP.MineUWP_XamlTypeInfo.XamlUserType;
+            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
+            {
+                global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForName(typeName);
+                if (libXamlType != null)
+                {
+                    if(libXamlType.IsConstructible || xamlType == null)
+                    {
+                        xamlType = libXamlType;
+                    }
+                }
             }
             if (xamlType != null)
             {
@@ -132,21 +156,35 @@ namespace MineUWP.MineUWP_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[6];
-            _typeNameTable[0] = "MineUWP.UniformGrid";
-            _typeNameTable[1] = "Windows.UI.Xaml.Controls.Panel";
-            _typeNameTable[2] = "Int32";
-            _typeNameTable[3] = "MineUWP.MainPage";
-            _typeNameTable[4] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[5] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable = new string[13];
+            _typeNameTable[0] = "Coding4Fun.Toolkit.Controls.ColorPicker";
+            _typeNameTable[1] = "Coding4Fun.Toolkit.Controls.ColorBaseControl";
+            _typeNameTable[2] = "Windows.UI.Xaml.Controls.Control";
+            _typeNameTable[3] = "Object";
+            _typeNameTable[4] = "Windows.UI.Color";
+            _typeNameTable[5] = "System.ValueType";
+            _typeNameTable[6] = "Windows.UI.Xaml.Media.SolidColorBrush";
+            _typeNameTable[7] = "MineUWP.UniformGrid";
+            _typeNameTable[8] = "Windows.UI.Xaml.Controls.Panel";
+            _typeNameTable[9] = "Int32";
+            _typeNameTable[10] = "MineUWP.MainPage";
+            _typeNameTable[11] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[12] = "Windows.UI.Xaml.Controls.UserControl";
 
-            _typeTable = new global::System.Type[6];
-            _typeTable[0] = typeof(global::MineUWP.UniformGrid);
-            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Panel);
-            _typeTable[2] = typeof(global::System.Int32);
-            _typeTable[3] = typeof(global::MineUWP.MainPage);
-            _typeTable[4] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[5] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable = new global::System.Type[13];
+            _typeTable[0] = typeof(global::Coding4Fun.Toolkit.Controls.ColorPicker);
+            _typeTable[1] = typeof(global::Coding4Fun.Toolkit.Controls.ColorBaseControl);
+            _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.Control);
+            _typeTable[3] = typeof(global::System.Object);
+            _typeTable[4] = typeof(global::Windows.UI.Color);
+            _typeTable[5] = typeof(global::System.ValueType);
+            _typeTable[6] = typeof(global::Windows.UI.Xaml.Media.SolidColorBrush);
+            _typeTable[7] = typeof(global::MineUWP.UniformGrid);
+            _typeTable[8] = typeof(global::Windows.UI.Xaml.Controls.Panel);
+            _typeTable[9] = typeof(global::System.Int32);
+            _typeTable[10] = typeof(global::MineUWP.MainPage);
+            _typeTable[11] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[12] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -181,8 +219,9 @@ namespace MineUWP.MineUWP_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_UniformGrid() { return new global::MineUWP.UniformGrid(); }
-        private object Activate_3_MainPage() { return new global::MineUWP.MainPage(); }
+        private object Activate_0_ColorPicker() { return new global::Coding4Fun.Toolkit.Controls.ColorPicker(); }
+        private object Activate_7_UniformGrid() { return new global::MineUWP.UniformGrid(); }
+        private object Activate_10_MainPage() { return new global::MineUWP.MainPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -194,9 +233,46 @@ namespace MineUWP.MineUWP_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  MineUWP.UniformGrid
+            case 0:   //  Coding4Fun.Toolkit.Controls.ColorPicker
+                userType = new global::MineUWP.MineUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Coding4Fun.Toolkit.Controls.ColorBaseControl"));
+                userType.Activator = Activate_0_ColorPicker;
+                userType.AddMemberName("Thumb");
+                xamlType = userType;
+                break;
+
+            case 1:   //  Coding4Fun.Toolkit.Controls.ColorBaseControl
+                userType = new global::MineUWP.MineUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
+                userType.AddMemberName("Color");
+                userType.AddMemberName("SolidColorBrush");
+                xamlType = userType;
+                break;
+
+            case 2:   //  Windows.UI.Xaml.Controls.Control
+                xamlType = new global::MineUWP.MineUWP_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 3:   //  Object
+                xamlType = new global::MineUWP.MineUWP_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 4:   //  Windows.UI.Color
+                userType = new global::MineUWP.MineUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 5:   //  System.ValueType
+                userType = new global::MineUWP.MineUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                xamlType = userType;
+                break;
+
+            case 6:   //  Windows.UI.Xaml.Media.SolidColorBrush
+                xamlType = new global::MineUWP.MineUWP_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 7:   //  MineUWP.UniformGrid
                 userType = new global::MineUWP.MineUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Panel"));
-                userType.Activator = Activate_0_UniformGrid;
+                userType.Activator = Activate_7_UniformGrid;
                 userType.AddMemberName("Rows");
                 userType.AddMemberName("Columns");
                 userType.AddMemberName("FirstColumn");
@@ -204,59 +280,138 @@ namespace MineUWP.MineUWP_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 1:   //  Windows.UI.Xaml.Controls.Panel
+            case 8:   //  Windows.UI.Xaml.Controls.Panel
                 xamlType = new global::MineUWP.MineUWP_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  Int32
+            case 9:   //  Int32
                 xamlType = new global::MineUWP.MineUWP_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  MineUWP.MainPage
+            case 10:   //  MineUWP.MainPage
                 userType = new global::MineUWP.MineUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_MainPage;
+                userType.Activator = Activate_10_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 4:   //  Windows.UI.Xaml.Controls.Page
+            case 11:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::MineUWP.MineUWP_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 5:   //  Windows.UI.Xaml.Controls.UserControl
+            case 12:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::MineUWP.MineUWP_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
             return xamlType;
         }
 
+        private global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider> _otherProviders;
+        private global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider> OtherProviders
+        {
+            get
+            {
+                if(_otherProviders == null)
+                {
+                    var otherProviders = new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider>();
+                    global::Windows.UI.Xaml.Markup.IXamlMetadataProvider provider;
+                    provider = new global::Coding4Fun.Toolkit.Controls.Coding4Fun_Toolkit_Controls__Win8_1__XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
+                    otherProviders.Add(provider); 
+                    _otherProviders = otherProviders;
+                }
+                return _otherProviders;
+            }
+        }
 
-        private object get_0_UniformGrid_Rows(object instance)
+        private global::Windows.UI.Xaml.Markup.IXamlType CheckOtherMetadataProvidersForName(string typeName)
+        {
+            global::Windows.UI.Xaml.Markup.IXamlType xamlType = null;
+            global::Windows.UI.Xaml.Markup.IXamlType foundXamlType = null;
+            foreach(global::Windows.UI.Xaml.Markup.IXamlMetadataProvider xmp in OtherProviders)
+            {
+                xamlType = xmp.GetXamlType(typeName);
+                if(xamlType != null)
+                {
+                    if(xamlType.IsConstructible)    // not Constructible means it might be a Return Type Stub
+                    {
+                        return xamlType;
+                    }
+                    foundXamlType = xamlType;
+                }
+            }
+            return foundXamlType;
+        }
+
+        private global::Windows.UI.Xaml.Markup.IXamlType CheckOtherMetadataProvidersForType(global::System.Type type)
+        {
+            global::Windows.UI.Xaml.Markup.IXamlType xamlType = null;
+            global::Windows.UI.Xaml.Markup.IXamlType foundXamlType = null;
+            foreach(global::Windows.UI.Xaml.Markup.IXamlMetadataProvider xmp in OtherProviders)
+            {
+                xamlType = xmp.GetXamlType(type);
+                if(xamlType != null)
+                {
+                    if(xamlType.IsConstructible)    // not Constructible means it might be a Return Type Stub
+                    {
+                        return xamlType;
+                    }
+                    foundXamlType = xamlType;
+                }
+            }
+            return foundXamlType;
+        }
+
+        private object get_0_ColorPicker_Thumb(object instance)
+        {
+            var that = (global::Coding4Fun.Toolkit.Controls.ColorPicker)instance;
+            return that.Thumb;
+        }
+        private void set_0_ColorPicker_Thumb(object instance, object Value)
+        {
+            var that = (global::Coding4Fun.Toolkit.Controls.ColorPicker)instance;
+            that.Thumb = (global::System.Object)Value;
+        }
+        private object get_1_ColorBaseControl_Color(object instance)
+        {
+            var that = (global::Coding4Fun.Toolkit.Controls.ColorBaseControl)instance;
+            return that.Color;
+        }
+        private void set_1_ColorBaseControl_Color(object instance, object Value)
+        {
+            var that = (global::Coding4Fun.Toolkit.Controls.ColorBaseControl)instance;
+            that.Color = (global::Windows.UI.Color)Value;
+        }
+        private object get_2_ColorBaseControl_SolidColorBrush(object instance)
+        {
+            var that = (global::Coding4Fun.Toolkit.Controls.ColorBaseControl)instance;
+            return that.SolidColorBrush;
+        }
+        private object get_3_UniformGrid_Rows(object instance)
         {
             var that = (global::MineUWP.UniformGrid)instance;
             return that.Rows;
         }
-        private void set_0_UniformGrid_Rows(object instance, object Value)
+        private void set_3_UniformGrid_Rows(object instance, object Value)
         {
             var that = (global::MineUWP.UniformGrid)instance;
             that.Rows = (global::System.Int32)Value;
         }
-        private object get_1_UniformGrid_Columns(object instance)
+        private object get_4_UniformGrid_Columns(object instance)
         {
             var that = (global::MineUWP.UniformGrid)instance;
             return that.Columns;
         }
-        private void set_1_UniformGrid_Columns(object instance, object Value)
+        private void set_4_UniformGrid_Columns(object instance, object Value)
         {
             var that = (global::MineUWP.UniformGrid)instance;
             that.Columns = (global::System.Int32)Value;
         }
-        private object get_2_UniformGrid_FirstColumn(object instance)
+        private object get_5_UniformGrid_FirstColumn(object instance)
         {
             var that = (global::MineUWP.UniformGrid)instance;
             return that.FirstColumn;
         }
-        private void set_2_UniformGrid_FirstColumn(object instance, object Value)
+        private void set_5_UniformGrid_FirstColumn(object instance, object Value)
         {
             var that = (global::MineUWP.UniformGrid)instance;
             that.FirstColumn = (global::System.Int32)Value;
@@ -269,26 +424,47 @@ namespace MineUWP.MineUWP_XamlTypeInfo
 
             switch (longMemberName)
             {
+            case "Coding4Fun.Toolkit.Controls.ColorPicker.Thumb":
+                userType = (global::MineUWP.MineUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Coding4Fun.Toolkit.Controls.ColorPicker");
+                xamlMember = new global::MineUWP.MineUWP_XamlTypeInfo.XamlMember(this, "Thumb", "Object");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_0_ColorPicker_Thumb;
+                xamlMember.Setter = set_0_ColorPicker_Thumb;
+                break;
+            case "Coding4Fun.Toolkit.Controls.ColorBaseControl.Color":
+                userType = (global::MineUWP.MineUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Coding4Fun.Toolkit.Controls.ColorBaseControl");
+                xamlMember = new global::MineUWP.MineUWP_XamlTypeInfo.XamlMember(this, "Color", "Windows.UI.Color");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_1_ColorBaseControl_Color;
+                xamlMember.Setter = set_1_ColorBaseControl_Color;
+                break;
+            case "Coding4Fun.Toolkit.Controls.ColorBaseControl.SolidColorBrush":
+                userType = (global::MineUWP.MineUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Coding4Fun.Toolkit.Controls.ColorBaseControl");
+                xamlMember = new global::MineUWP.MineUWP_XamlTypeInfo.XamlMember(this, "SolidColorBrush", "Windows.UI.Xaml.Media.SolidColorBrush");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_2_ColorBaseControl_SolidColorBrush;
+                xamlMember.SetIsReadOnly();
+                break;
             case "MineUWP.UniformGrid.Rows":
                 userType = (global::MineUWP.MineUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("MineUWP.UniformGrid");
                 xamlMember = new global::MineUWP.MineUWP_XamlTypeInfo.XamlMember(this, "Rows", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_0_UniformGrid_Rows;
-                xamlMember.Setter = set_0_UniformGrid_Rows;
+                xamlMember.Getter = get_3_UniformGrid_Rows;
+                xamlMember.Setter = set_3_UniformGrid_Rows;
                 break;
             case "MineUWP.UniformGrid.Columns":
                 userType = (global::MineUWP.MineUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("MineUWP.UniformGrid");
                 xamlMember = new global::MineUWP.MineUWP_XamlTypeInfo.XamlMember(this, "Columns", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_1_UniformGrid_Columns;
-                xamlMember.Setter = set_1_UniformGrid_Columns;
+                xamlMember.Getter = get_4_UniformGrid_Columns;
+                xamlMember.Setter = set_4_UniformGrid_Columns;
                 break;
             case "MineUWP.UniformGrid.FirstColumn":
                 userType = (global::MineUWP.MineUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("MineUWP.UniformGrid");
                 xamlMember = new global::MineUWP.MineUWP_XamlTypeInfo.XamlMember(this, "FirstColumn", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_2_UniformGrid_FirstColumn;
-                xamlMember.Setter = set_2_UniformGrid_FirstColumn;
+                xamlMember.Getter = get_5_UniformGrid_FirstColumn;
+                xamlMember.Setter = set_5_UniformGrid_FirstColumn;
                 break;
             }
             return xamlMember;

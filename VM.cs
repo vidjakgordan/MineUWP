@@ -87,7 +87,6 @@ namespace MineUWP
                 timer.Stop();
                 MessageDialog messbox = new MessageDialog("VRIJEME ISTEKLO!");
                 var res = await messbox.ShowAsync();
-                //Basetime = basetime1;
                 NovaIgra();
             }
         }
@@ -144,14 +143,14 @@ namespace MineUWP
 
                 if (BrojRedaka*BrojStupaca - brojOtvorenih == BrojMina)
                 {
-                    MessageDialog messbox = new MessageDialog("POBJEDIO SI :)");
-                    var res = await messbox.ShowAsync();
                     timer.Stop();
+                    int vrijeme = basetime1 - Basetime;
+                    MessageDialog messbox = new MessageDialog("POBJEDIO SI :) " + vrijeme.ToString() + "sekunda!");
+                    var res = await messbox.ShowAsync();
                     NovaIgra();
                 }
             }
         }
-        
 
         public void DesniKlikObrada(Cell c)
         {

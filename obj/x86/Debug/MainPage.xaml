@@ -40,8 +40,8 @@
                             <TextBlock>Još sekunda: </TextBlock>
                             <TextBlock Text="{Binding Basetime, Mode=TwoWay}"></TextBlock>
                         </StackPanel>
-                        <StackPanel>
-                            <Button x:ConnectionId='4' x:Name="button_CPopen"                             HorizontalAlignment="Stretch" Content="PROMIJENI BOJU SUČELJA"></Button>
+                        <StackPanel Margin="10">
+                            <Button x:ConnectionId='4' x:Name="button_CPopen"                             HorizontalAlignment="Stretch" Content="BOJA SUČELJA"></Button>
                             <Controls:ColorPicker x:ConnectionId='5' x:Name="CPicker" Visibility="Collapsed" Height="200" Width="200"                                    ></Controls:ColorPicker>
                         </StackPanel>
                     </StackPanel>
@@ -51,30 +51,28 @@
                     
                     <!-- GLAVNI DIO DI SE PRIKAZUJU KVADRATICI -->
                     <!-- https://wpf.2000things.com/2014/02/25/1016-displaying-a-collection-of-items-in-a-wrappanel/ -->
-                    <Grid Height="Auto">
-                        <ItemsControl Height="Auto" ItemsSource="{Binding Cells}">
+                    <StackPanel>
+                        <ItemsControl ItemsSource="{Binding Cells}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Grid Margin="1"  MinHeight="30">
+                                    <Grid Margin="1" MinHeight="33">
                                         <Grid>
-                                            <Button x:ConnectionId='6' Content="{Binding Text}" Command="{Binding LijeviKlik}" CommandParameter="{Binding}" Visibility="{Binding ShowButton}"                                 
+                                            <Button x:ConnectionId='6' Opacity="1" Content="{Binding Text}" Command="{Binding LijeviKlik}" CommandParameter="{Binding}" Visibility="{Binding ShowButton}"                                 
                                                     HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Button>
                                             <Image  MaxHeight="30" Source="Images/bomb.png" Visibility="{Binding ShowBomb}"></Image>
                                             <Image x:ConnectionId='7' MaxHeight="30" Source="Images/flag.png" Visibility="{Binding ShowFlag}"                                ></Image>
                                         </Grid>
-                                     </Grid>
+                                    </Grid>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
 
-                            <ItemsControl.ItemsPanel>
-                                <ItemsPanelTemplate>
+                            <ItemsControl.ItemsPanel >
+                                <ItemsPanelTemplate >
                                     <local:UniformGrid Rows="{Binding BrojRedaka}" Columns="{Binding BrojStupaca}"></local:UniformGrid>
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
-
                         </ItemsControl>
-
-                    </Grid>
+                    </StackPanel>
                 </StackPanel>
                 
             </SplitView>

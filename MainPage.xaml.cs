@@ -19,6 +19,7 @@ namespace MineUWP
 {
     public sealed partial class MainPage : Page
     {
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -65,10 +66,11 @@ namespace MineUWP
         private void CPicker_ColorChanged(object sender, Windows.UI.Color color)
         {
             SolidColorBrush color_new = new SolidColorBrush(color);
-            ControlsPanel.Background = color_new;
-            //izmjena boja            
-
-
+            color_new.Opacity = .5;
+            MainBack.Background = splitView.Background = color_new;
+            
+            //izmjena boja       
         }
+
     }
 }

@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>a859a125-91ef-4639-8f20-85f325e47b8b</PackageIdentityName>
     <PackageIdentityPublisher>CN=Gordan</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Gordan\documents\visual studio 2015\Projects\MineUWP\MineUWP\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -25,16 +25,16 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Gordan\documents\visual studio 2015\Projects\MineUWP\MineUWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-09T12:54:39.105</Modified>
+      <Modified>2017-05-09T16:55:30.703</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\bin\x86\Debug\MineUWP.exe">
+    <AppxPackagedFile Include="C:\Users\Gordan\documents\visual studio 2015\Projects\MineUWP\MineUWP\bin\x86\Debug\MineUWP.exe">
       <PackagePath>entrypoint\MineUWP.exe</PackagePath>
-      <Modified>2017-05-09T12:54:38.376</Modified>
+      <Modified>2017-05-09T16:55:30.084</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Gordan\.nuget\packages\Coding4Fun.Toolkit.Controls\2.1.8\lib\netcore451\Coding4Fun.Toolkit.Controls.dll">
       <PackagePath>Coding4Fun.Toolkit.Controls.dll</PackagePath>
@@ -456,55 +456,55 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2015-07-22T21:11:12.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\Images\bomb.png">
+    <AppxPackagedFile Include="C:\Users\Gordan\documents\visual studio 2015\Projects\MineUWP\MineUWP\Images\bomb.png">
       <PackagePath>Images\bomb.png</PackagePath>
       <Modified>2017-05-07T09:13:32.754</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\Images\flag.png">
+    <AppxPackagedFile Include="C:\Users\Gordan\documents\visual studio 2015\Projects\MineUWP\MineUWP\Images\flag.png">
       <PackagePath>Images\flag.png</PackagePath>
       <Modified>2017-05-07T09:13:32.743</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Gordan\documents\visual studio 2015\Projects\MineUWP\MineUWP\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
       <Modified>2015-09-20T15:30:08.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Gordan\documents\visual studio 2015\Projects\MineUWP\MineUWP\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2015-09-20T15:30:08.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Gordan\documents\visual studio 2015\Projects\MineUWP\MineUWP\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2015-09-20T15:30:08.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Gordan\documents\visual studio 2015\Projects\MineUWP\MineUWP\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2015-09-20T15:30:08.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\Gordan\documents\visual studio 2015\Projects\MineUWP\MineUWP\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2015-09-20T15:30:08.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\Gordan\documents\visual studio 2015\Projects\MineUWP\MineUWP\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2015-09-20T15:30:08.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Gordan\documents\visual studio 2015\Projects\MineUWP\MineUWP\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2015-09-20T15:30:08.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\Gordan\documents\visual studio 2015\Projects\MineUWP\MineUWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2017-05-05T19:29:58.277</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\bin\x86\Debug\MineUWP.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Gordan\documents\visual studio 2015\Projects\MineUWP\MineUWP\bin\x86\Debug\MineUWP.xr.xml">
       <PackagePath>MineUWP.xr.xml</PackagePath>
-      <Modified>2017-05-09T12:54:38.235</Modified>
+      <Modified>2017-05-09T16:54:50.360</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -518,14 +518,14 @@
       <PackagePath>Coding4Fun.Toolkit.Controls\Themes\Generic.xbf</PackagePath>
       <Modified>2016-05-12T13:21:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Gordan\documents\visual studio 2015\Projects\MineUWP\MineUWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-09T12:54:38.886</Modified>
+      <Modified>2017-05-09T16:55:30.520</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Gordan\Documents\Visual Studio 2015\Projects\MineUWP\MineUWP\bin\x86\Debug\Core\MineUWP.exe">
+    <AppxPackagedFile Include="C:\Users\Gordan\documents\visual studio 2015\Projects\MineUWP\MineUWP\bin\x86\Debug\Core\MineUWP.exe">
       <PackagePath>MineUWP.exe</PackagePath>
-      <Modified>2017-05-09T12:54:39.100</Modified>
+      <Modified>2017-05-09T16:55:30.697</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

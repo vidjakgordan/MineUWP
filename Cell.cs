@@ -82,7 +82,7 @@ namespace MineUWP
         #region icommand lijeviklik
         public ICommand LijeviKlik
         {
-            get { return _lijeviKlik ?? (_lijeviKlik = new CommandHandler_Cell((Cell c) => vm.LijeviKlikObrada(c), true));} // PROBLEMIIII!!!
+            get { return _lijeviKlik ?? (_lijeviKlik = new CommandHandler_Cell((Cell c) => vm.LijeviKlikObrada(c), true));}
         }
         #endregion
 

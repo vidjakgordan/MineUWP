@@ -150,7 +150,7 @@ namespace MineUWP
 
                 if (n == 0)
                 {
-                    JasneCelijeOkolo(c.I, c.J); //???
+                    JasneCelijeOkolo(c.I, c.J);
                 }
 
                 if (BrojRedaka*BrojStupaca - brojOtvorenih == BrojMina)

@@ -57,7 +57,7 @@
                                 <DataTemplate>
                                     <Grid Margin="1" MinHeight="33">
                                         <Grid>
-                                            <Button Opacity="0.3"  Content="{Binding Text}" Command="{Binding LijeviKlik}" 
+                                            <Button Margin="1" Opacity="0.6"  Content="{Binding Text}" Command="{Binding LijeviKlik}" 
                                                     CommandParameter="{Binding}" Visibility="{Binding ShowButton}" RightTapped="Button_RightTapped"
                                                     HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Button>
                                             <Image  MaxHeight="30" Source="Images/bomb.png" Visibility="{Binding ShowBomb}"></Image>
